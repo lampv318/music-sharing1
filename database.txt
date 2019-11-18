@@ -1,0 +1,73 @@
+Song
+-
+ID int PK
+name string
+artistID int FK >- Artist.ID
+albumID  int FK >- Album.ID
+year int
+file string
+
+Album
+-
+ID int PK
+name string
+year int
+
+Category
+-
+ID int PK
+name string
+tag string
+
+Artist
+-
+ID int PK
+name string
+infor string
+
+Playlist
+-
+ID int PK
+userID int FK >- User.ID
+name string
+
+User
+-
+ID int PK
+name string
+email string
+
+
+AlbumArtist
+-
+artistID int FK >- Artist.ID
+albumID int FK >- Album.ID
+
+AlbumCategory
+-
+categoryID int FK >- Category.ID
+albumID int  FK >- Album.ID
+  
+
+PlaylistSong
+-
+playlistID int FK >- Playlist.ID
+songID int FK >- Song.ID
+index int
+
+SongCategory
+-
+songID int FK >- Song.ID
+categoryID int FK >- Category.ID
+
+rails generate model User name email
+rails generate model Song name artist_id:bigint album_id:bigint year:integer file  
+rails generate model Artist name info:text
+rails generate model Category name
+rails generate model Playlist name user_id:bigint
+rails generate model Album name year:integer
+rails generate model AlbumArtist album_id:bigint artist_id:bigint
+rails generate model AlbumCategory album_id:bigint category_id:bigint
+rails generate model PlaylistSong playlist_id:bigint song_id:bigint
+rails generate model SongCategory song_id:bigint category_id:bigint
+rails generate model UserArtist user_id:bigint artist_id:bigint
