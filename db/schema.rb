@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_11_18_072147) do
   create_table "albums", force: :cascade do |t|
     t.string "name"
     t.integer "year"
+    t.integer "disk_no", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -73,6 +74,9 @@ ActiveRecord::Schema.define(version: 2019_11_18_072147) do
     t.bigint "album_id"
     t.integer "year"
     t.string "file"
+    t.integer "track_no", default: 1
+    t.float "duration"
+    t.integer "bit_rate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

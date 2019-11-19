@@ -6,6 +6,9 @@ class CreateSongs < ActiveRecord::Migration[6.0]
       t.bigint :album_id
       t.integer :year
       t.string :file
+      t.integer :track_no, default: 1
+      t.float :duration
+      t.integer :bit_rate
 
       t.timestamps
     end
