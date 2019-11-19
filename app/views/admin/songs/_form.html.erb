@@ -1,0 +1,21 @@
+<%= semantic_form_for [:admin, @song] do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :track_no %>
+    <%= f.input :name %>
+    <%= f.input :artist %>
+    <%= f.input :album %>
+    <%= f.input :categories %>
+    <%= f.input :file, as: :file %>
+  <% end %>
+  <%= f.actions do %>
+    <%= f.action :submit %>
+    <li class="cancel">
+      <% if f.object.file.attached? %>
+        <%= link_to t("Delete attachment"),
+                    attachment_path(f.object.file.signed_id),
+                    method: :delete,
+                    data: {confirm: "Confirm"} %>
+      <% end %>
+    </li>
+  <% end %>
+<% end %>

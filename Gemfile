@@ -15,6 +15,8 @@ gem "bootsnap", ">= 1.4.2", require: false
 gem "activeadmin"
 gem "jquery-rails"
 gem "materialize-sass"
+gem "best_in_place"
+gem "coffee-rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
