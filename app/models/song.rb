@@ -5,4 +5,6 @@ class Song < ApplicationRecord
   has_many :playlists, through: :playlist_songs
   has_many :song_categories, dependent: :destroy
   has_many :categories, through: :song_categories
+
+  has_one_attached :file
 end

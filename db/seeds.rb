@@ -1,47 +1,3 @@
-artist1 = Artist.create!(
-  name: "Lady Gaga",
-  info: "A great singer born in 19xx"
-)
-
-album1 = Album.create!(
-  name: "Album 02"
-)
-
-Song.create!(
-  name: "Track 01",
-  artist: artist1,
-  album: album1
-)
-
-Song.create!(
-  name: "Track 02",
-  artist: artist1,
-  album: album1
-)
-
-artist2 = Artist.create!(
-  name: "Mariah Carey",
-  info: "A very great artist born in 19xx"
-)
-
-album2 = Album.create!(
-  name: "Greatest Hits"
-)
-
-Song.create!(
-  name: "Track 03",
-  artist: artist2,
-  album: album2
-)
-
-Song.create!(
-  name: "Track 04",
-  artist: artist2,
-  album: album2
-)
-
-puts "create song completed, start seed by metadata file"
-
 metadata_files = Dir.glob("import/*.flac.json")
 metadata_files.each do |metadata_file|
   metadata = JSON.parse(File.read(metadata_file))
@@ -58,6 +14,7 @@ metadata_files.each do |metadata_file|
   track_no = tags["track"]
   year = tags["date"] || tags["year"]
   artist = tags["artist"]
+  bit_rate = metadata["format"]["bit_rate"]
   
   # create 
   album = Album.find_or_create_by name: album
@@ -82,7 +39,8 @@ metadata_files.each do |metadata_file|
     artist: artist,
     album: album,
     track_no: track_no,
-    year: year
+    year: year,
+    bit_rate: bit_rate
   )
   puts "create song"
 
@@ -91,5 +49,10 @@ metadata_files.each do |metadata_file|
     category: category
   ) if category.present?
   puts "create song category"
+  
+  song.file.attach(
+    io: File.open(filename),
+    filename: track_no.to_s + ". " + title + ".flac"
+  ) unless song.file.attached?
 
 end
