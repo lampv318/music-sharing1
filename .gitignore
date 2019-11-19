@@ -28,6 +28,7 @@
 /config/master.key
 /Gemfile.lock
 /import/*
+/.idea/
 
 /public/packs
 /public/packs-test

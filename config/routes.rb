@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   root "pages#index"
+
+  resources :attachments, only: :destroy
 
   namespace :api, defaults: {format: 'json'} do
     resources :songs, only: [:index, :show]
