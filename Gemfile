@@ -17,6 +17,9 @@ gem "jquery-rails"
 gem "materialize-sass"
 gem "best_in_place"
 gem "coffee-rails"
+gem "font-awesome-rails"
+gem "font-awesome-sass"
+gem "toastr-rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

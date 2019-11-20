@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root "pages#index"
+  get "player", to: "player#index"
 
   resources :attachments, only: :destroy
 
