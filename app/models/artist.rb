@@ -4,4 +4,6 @@ class Artist < ApplicationRecord
   has_many :songs, dependent: :destroy
   has_many :album_artists, dependent: :destroy
   has_many :albums, through: :album_artists
+
+  mount_uploader :picture, PictureUploader
 end

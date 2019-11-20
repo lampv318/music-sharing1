@@ -1,6 +1,7 @@
-json.call @artist, :id, :name
-json.songs @artist.songs do |song|
-  json.id song.id
-  json.name song.name
-  json.album song.album, :id, :name
+json.partial! "artist", artist: @artist
+json.related @artist do |artist|
+  json.partial! "artist", artist: artist
+end
+json.contributed_albums @artist do |album|
+  json.partial! "api/albums/album", album: album
 end
