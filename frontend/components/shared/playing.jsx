@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-class playing extends React.Component {
+class Playing extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -26,4 +26,4 @@ class playing extends React.Component {
   }
 }
 
-export default playing;
+export default Playing;

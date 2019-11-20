@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-class Currenttrack extends React.Component {
+class CurrentTrack extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -49,4 +49,4 @@ class Currenttrack extends React.Component {
   }
 }
 
-export default Currenttrack;
+export default CurrentTrack;

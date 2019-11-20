@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 class Header extends React.Component {
   constructor(props) {
@@ -56,10 +56,7 @@ class Header extends React.Component {
                 aria-labelledby="dropdownMenu1"
               >
                 <li>
-                  <a href="#">Private Session</a>
-                </li>
-                <li>
-                  <a href="#">Account</a>
+                  <a href="/account">Account</a>
                 </li>
                 <li>
                   <a href="#">Settings</a>
