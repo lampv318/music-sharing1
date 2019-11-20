@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root "pages#index"
   get "player", to: "player#index"
+  get "login", to: "sessions#new"
 
   resources :attachments, only: :destroy
 
