@@ -1,5 +1,5 @@
 module Api
-  class ArtistsController < ApplicationController
+  class ArtistsController < Api::ApiController
     before_action :set_artist, only: :show
 
     def index
@@ -18,6 +18,7 @@ module Api
     private
     def set_artist
       @artist = Artist.find_by id: params[:id]
+      present_or_not_found @artist
     end
   end
 end
