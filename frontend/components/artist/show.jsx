@@ -168,7 +168,7 @@ class ArtistShow extends React.Component {
             <div className="artist__info">
               <div className="profile__img">
                 <img
-                  src={artist.cover}
+                  src={artist.picture}
                   alt={artist.name}
                 />
               </div>

@@ -63,7 +63,7 @@ class AlbumItem extends React.Component {
       <div className="media-card" key={album.id}>
         <div
           className="media-card__image"
-          style={{ backgroundImage: `url(${album.cover})` }}
+          style={{ backgroundImage: `url(${album.picture})` }}
         >
           {this.playButton(album)}
         </div>

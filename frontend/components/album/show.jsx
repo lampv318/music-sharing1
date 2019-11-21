@@ -84,7 +84,7 @@ class AlbumShow extends React.Component {
             <div className="album__info">
               <div className="profile__img">
                 <img
-                  src={album.cover}
+                  src={album.picture}
                   alt={album.name}
                 />
               </div>

@@ -67,7 +67,7 @@ class AppProvider extends React.Component {
     AlbumApiUtil.fetchAlbum(track.album_id).then(
       (album) => {
         this.setState({
-          currentTrackCoverUrl: album.thumb
+          currentTrackCoverUrl: album.picture
         })
       }
     )

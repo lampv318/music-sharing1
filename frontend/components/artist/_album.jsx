@@ -46,7 +46,7 @@ class ArtistAlbum extends React.Component {
         <div className="album__info">
           <div className="album__info__art">
             <img
-              src={album.cover}
+              src={album.picture}
               alt={album.name}
             />
           </div>

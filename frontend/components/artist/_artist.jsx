@@ -62,7 +62,7 @@ class ArtistItem extends React.Component {
       <div className="media-card" key={artist.id}>
         <div
           className="media-card__image"
-          style={{ backgroundImage: `url(${artist.cover})` }}
+          style={{ backgroundImage: `url(${artist.picture})` }}
         >
           {this.playButton(artist)}
         </div>
