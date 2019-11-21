@@ -48,15 +48,15 @@ ActiveRecord::Schema.define(version: 2019_11_19_063647) do
   end
 
   create_table "album_artists", force: :cascade do |t|
-    t.bigint "album_id"
-    t.bigint "artist_id"
+    t.integer "album_id"
+    t.integer "artist_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "album_categories", force: :cascade do |t|
-    t.bigint "album_id"
-    t.bigint "category_id"
+    t.integer "album_id"
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -64,7 +64,8 @@ ActiveRecord::Schema.define(version: 2019_11_19_063647) do
   create_table "albums", force: :cascade do |t|
     t.string "name"
     t.integer "year"
-    t.integer "disk_no", default: 1
+    t.integer "disc_no", default: 1
+    t.string "picture"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -72,52 +73,55 @@ ActiveRecord::Schema.define(version: 2019_11_19_063647) do
   create_table "artists", force: :cascade do |t|
     t.string "name"
     t.text "info"
+    t.string "picture"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+    t.integer "tag"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "playlist_songs", force: :cascade do |t|
-    t.bigint "playlist_id"
-    t.bigint "song_id"
+    t.integer "playlist_id"
+    t.integer "song_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "playlists", force: :cascade do |t|
     t.string "name"
-    t.bigint "user_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "song_categories", force: :cascade do |t|
-    t.bigint "song_id"
-    t.bigint "category_id"
+    t.integer "song_id"
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "songs", force: :cascade do |t|
     t.string "name"
-    t.bigint "artist_id"
-    t.bigint "album_id"
+    t.integer "artist_id"
+    t.integer "album_id"
     t.integer "year"
     t.integer "track_no", default: 1
     t.float "duration"
     t.integer "bit_rate"
+    t.string "save_file"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "user_artists", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "artist_id"
+    t.integer "user_id"
+    t.integer "artist_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
