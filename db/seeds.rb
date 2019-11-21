@@ -70,7 +70,7 @@ metadata_files.each do |metadata_file|
       category: category
   ) if category.present?
 
-  song.save_file = File.open(imported_filename) if song.file.blank?
+  song.save_file = File.open(imported_filename) if song.save_file.blank?
   song.save!
 
 end

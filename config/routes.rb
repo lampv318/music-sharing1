@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   get "player", to: "player#index"
   get "login", to: "sessions#new"
 
-  resources :attachments, only: :destroy
+  scope "/songs/:song_id", as: "song" do
+    resource :attachment, only: [:show, :destroy]
+  end
+
 
   namespace :api, defaults: {format: 'json'} do
     resources :songs, only: [:index, :show]

@@ -6,5 +6,5 @@ class Song < ApplicationRecord
   has_many :song_categories, dependent: :destroy
   has_many :categories, through: :song_categories
 
-  has_one_attached :file
+  mount_uploader :save_file, SongUploader
 end
