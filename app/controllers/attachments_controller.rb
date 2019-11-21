@@ -6,7 +6,7 @@ class AttachmentsController < ApplicationController
     respond_to do |format|
       format.html do
         flash[:danger] = "attachment deleted"
-        redirect_back fallback_location: admin_root_url
+        redirect_back fallback_location: root_url
       end
     end
   end
