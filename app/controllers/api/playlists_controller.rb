@@ -1,5 +1,5 @@
 module Api
-    class PlaylistsController < ApplicationController
+    class PlaylistsController < Api::ApiController
       before_action :set_user, only: [:index, :show]
       before_action :set_playlist, only: :show
 
