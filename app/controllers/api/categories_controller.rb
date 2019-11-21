@@ -1,5 +1,5 @@
 module Api
-  class CategoriesController < ApplicationController
+  class CategoriesController < Api::ApiController
     before_action :set_category, only: :show
 
     def index
@@ -18,6 +18,7 @@ module Api
     private
     def set_category
       @category = Category.find_by id: params[:id]
+      present_or_not_found @category
     end
   end
 end

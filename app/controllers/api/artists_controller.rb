@@ -1,5 +1,5 @@
 module Api
-  class ArtistsController < ApplicationController
+  class ArtistsController < Api::ApiController
     before_action :set_artist, only: :show
 
     def index
