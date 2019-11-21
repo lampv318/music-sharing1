@@ -8,6 +8,7 @@ class CreateSongs < ActiveRecord::Migration[6.0]
       t.integer :track_no, default: 1
       t.float :duration
       t.integer :bit_rate
+      t.string :file_type_1
 
       t.timestamps
     end
