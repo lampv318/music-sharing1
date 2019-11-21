@@ -1,5 +1,11 @@
 import axios from 'axios';
 
+export const fetchCategoryAlbums = (categoryId) => (
+  axios.get(`/api/categories/${categoryId}/albums.json`).then(
+    response => { return response.data }
+  )
+);
+
 export const fetchArtistAlbums = (artistId) => (
   axios.get(`/api/artists/${artistId}/albums.json`).then(
     response => { return response.data }

@@ -1,20 +1,24 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
-class Playlist extends React.Component {
+class NewPlaylist extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <section className="playlist">
+      <section className="new_playlist">
         <a href="#">
           <i className="ion-ios-add-circle" />
-          New Playlist
+          <FormattedMessage
+            id="newplaylist.new_playlist"
+            defaultMessage="New Playlist"
+          />
         </a>
       </section>
     );
   }
 }
 
-export default Playlist;
+export default NewPlaylist;

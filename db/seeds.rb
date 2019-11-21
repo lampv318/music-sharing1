@@ -30,15 +30,15 @@ metadata_files.each do |metadata_file|
   album = Album.find_or_create_by name: imported_album, disc_no: imported_disc_no
   album.year = imported_year if album.year.blank?
   if album.picture.blank?
-    coverpath = imported_filename + ".jpg"
-    album.picture = File.open(coverpath) if File.file? coverpath
+    picture_path = imported_filename + ".jpg"
+    album.picture = File.open(picture_path) if File.file? picture_path
   end
   album.save!
 
   artist = Artist.find_or_create_by name: imported_artist
   if artist.picture.blank?
-    coverpath = imported_filename + ".jpg"
-    artist.picture = File.open(coverpath) if File.file? coverpath
+    picture_path = imported_filename + ".jpg"
+    artist.picture = File.open(picture_path) if File.file? picture_path
   end
   artist.save!
 

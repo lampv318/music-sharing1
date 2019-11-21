@@ -1,22 +1,22 @@
 // Sliders
-$(document).ready(function() {
+$(document).ready(function () {
   var slider = document.getElementById('song-progress');
 
   noUiSlider.create(slider, {
-    start: [ 20 ],
+    start: [0],
     range: {
-      'min': [   0 ],
-      'max': [ 100 ]
+      'min': [0],
+      'max': [100]
     }
   });
 
   var slider = document.getElementById('song-volume');
 
   noUiSlider.create(slider, {
-    start: [ 90 ],
+    start: [100],
     range: {
-      'min': [   0 ],
-      'max': [ 100 ]
+      'min': [0],
+      'max': [100]
     }
   });
 
@@ -29,41 +29,40 @@ $(document).ready(function() {
 
   // Viewport Heights
 
-  $(window).on("resize load", function(){
-    var totalHeight = $(window).height();
-    var headerHeight = $('.header').outerHeight();
-    var footerHeight = $('.current-track').outerHeight();
-    var playlistHeight = $('.playlist').outerHeight();
-    var nowPlaying = $('.playing').outerHeight();
+  $(window).on('resize load', function () {
+    let totalHeight = $(window).height();
+    let headerHeight = $('.header').outerHeight();
+    let footerHeight = $('.current-track').outerHeight();
+    let playlistHeight = $('.new_playlist').outerHeight();
+    let nowPlaying = $('.playing').outerHeight();
 
-    var navHeight = totalHeight - (headerHeight + footerHeight + playlistHeight + nowPlaying);
-    var artistHeight = totalHeight - (headerHeight + footerHeight);
+    let navHeight = totalHeight - (headerHeight + footerHeight + playlistHeight + nowPlaying);
+    let artistHeight = totalHeight - (headerHeight + footerHeight);
 
-    $(".navigation").css("height" , navHeight);
-    $(".artist").css("height" , artistHeight);
-    $(".social").css("height" , artistHeight);
+    $('.navigation').css('height', navHeight);
+    $('.content__middle').css('height', artistHeight);
   });
 
   // Collapse Toggles
 
-  $(".navigation__list__header").on( "click" , function() {
-    $(this).toggleClass( "active" );
+  $('.navigation__list__header').on('click', function () {
+    $(this).toggleClass('active');
   });
 
 
   // Media Queries
 
-  $(window).on("resize load", function(){
-    if ($(window).width() <= 768){
-      $(".collapse").removeClass("in");
-      $(".navigation").css("height" , "auto");
-      $(".artist").css("height" , "auto");
+  $(window).on('resize load', function () {
+    if ($(window).width() <= 768) {
+      $('.collapse').removeClass('in');
+      $('.navigation').css('height', 'auto');
+      $('.artist').css('height', 'auto');
     }
   });
 
-  $(window).on("resize load", function(){
-    if ($(window).width() > 768){
-      $(".collapse").addClass("in");
+  $(window).on('resize load', function () {
+    if ($(window).width() > 768) {
+      $('.collapse').addClass('in');
     }
   });
 });

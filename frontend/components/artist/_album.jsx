@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { FormattedMessage } from 'react-intl';
+
+import { constants } from '../../constants/constants';
 import TrackItem from '../shared/track_item';
 
 import * as SongApiUtil from '../../utils/song_api_util';
@@ -13,8 +16,10 @@ class ArtistAlbum extends React.Component {
     };
 
     SongApiUtil.fetchAlbumSongs(this.state.album.id).then(
-      (data) => {
-        this.setState({ songs: data });
+      data => {
+        this.setState({
+          songs: data
+        });
       }
     )
   }
@@ -25,7 +30,14 @@ class ArtistAlbum extends React.Component {
 
     songContent = (
       songs.map((song, index) => (
-        <TrackItem song={ song } key={ song.id } />
+        <TrackItem
+          key={song.id}
+          song={song}
+          queue={songs}
+          queueIndex={index}
+          queueType={constants.ALBUM}
+          queueId={song.album_id}
+        />
       ))
     )
 
@@ -34,18 +46,21 @@ class ArtistAlbum extends React.Component {
         <div className="album__info">
           <div className="album__info__art">
             <img
-              src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/whenDarkOut.jpg"
-              alt={ album.name }
+              src={album.picture}
+              alt={album.name}
             />
           </div>
           <div className="album__info__meta">
             <div className="album__year">2015</div>
             <div className="album__name">
-              { album.name }
+              {album.name}
             </div>
             <div className="album__actions">
               <button className="button-light save">
-                Save
+                <FormattedMessage
+                  id="artist_album.save"
+                  defaultMessage="Save"
+                />
               </button>
               <button className="button-light more">
                 <i className="ion-ios-more" />
@@ -57,7 +72,12 @@ class ArtistAlbum extends React.Component {
           <div className="tracks">
             <div className="tracks__heading">
               <div className="tracks__heading__number">#</div>
-              <div className="tracks__heading__title">Song</div>
+              <div className="tracks__heading__title">
+                <FormattedMessage
+                  id="artist_album.song"
+                  defaultMessage="Song"
+                />
+              </div>
               <div className="tracks__heading__length">
                 <i className="ion-ios-stopwatch-outline" />
               </div>
