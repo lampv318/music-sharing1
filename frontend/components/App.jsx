@@ -1,8 +1,12 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom'
 
-import Header from './shared/header';
 import Content from './content';
-import CurrentTrack from './shared/current_track';
+
+import {IntlProvider} from 'react-intl';
+import {ENGLISH} from '../locales/en';
+
+import AppProvider from './app_provider';
 
 import 'bootstrap';
 
@@ -10,18 +14,23 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentTrackId: 0,
-      currentTrackSeekTime: 0
+      locale: 'en',
+      messages: ENGLISH.messages
     }
   }
 
   render() {
     return (
-      <div>
-        <Header />
-        <Content />
-        <CurrentTrack />
-      </div>
+      <IntlProvider
+        locale={this.state.locale}
+        messages={this.state.messages}
+      >
+        <AppProvider>
+          <Router basename="/player">
+            <Content />
+          </Router>
+        </AppProvider>
+      </IntlProvider>
     );
   }
 }

@@ -1,75 +1,87 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { withRouter } from 'react-router';
 
+import {
+  Route,
+  Link,
+  Switch,
+  Redirect,
+} from 'react-router-dom'
+
+import { constants } from '../constants/constants';
+
+import * as MiscUtils from '../utils/misc_utils';
+
+import Header from './shared/header';
 import Navigation from './shared/navigation';
 import Playlist from './shared/playlist';
 import Playing from './shared/playing';
-import Social from './shared/social';
+import CurrentTrack from './shared/current_track';
 
-import ArtistIndex from './Artist/artist_index';
-import ArtistShow from './Artist/artist_show';
+import CategoryIndex from './category/index';
 
-import AlbumIndex from './Album/album_index';
-import AlbumShow from './Album/album_show';
+import ArtistIndex from './artist/index';
+import ArtistShow from './artist/show';
+
+import AlbumIndex from './album/index';
+import AlbumShow from './album/show';
+
+import PlaylistShow from './playlist/show';
+
+import SearchResult from './search/result';
 
 class Content extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      content: 'artist_index',
-      artistId: 3,
-      albumId: 1
-    }
   }
 
-  setContent = (newContent, id) => {
-    this.setState({
-      content: newContent
-    });
-    if (newContent === 'artist_show') {
-      this.setState({
-        artistId: id
-      })
-    }
-    if (newContent === 'album_show') {
-      this.setState({
-        albumId: id
-      })
+  componentDidMount() {
+    MiscUtils.setWindowSize();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      MiscUtils.setWindowSize();
     }
   }
 
   render() {
-    let mainContent;
+    const Artists = ({ match }) => (
+      <Fragment>
+        <Route exact path={`${match.url}`} component={ ArtistIndex } />
+        <Route path={`${match.url}/:id`} component={ ArtistShow } />
+      </Fragment>
+    )
 
-    if (this.state.content === 'artist_index') {
-      mainContent = <ArtistIndex setContent={ this.setContent } />
-    }
-
-    if (this.state.content === 'artist_show') {
-      mainContent = <ArtistShow artistId={ this.state.artistId } />
-    }
-
-    if (this.state.content === 'album_index') {
-      mainContent = <AlbumIndex setContent={ this.setContent } />
-    }
-
-    if (this.state.content === 'album_show') {
-      mainContent = <AlbumShow albumId={ this.state.albumId } />
-    }
+    const Albums = ({ match }) => (
+      <Fragment>
+        <Route exact path={`${match.url}`} component={ AlbumIndex } />
+        <Route path={`${match.url}/:id`} component={ AlbumShow } />
+      </Fragment>
+    )
 
     return (
-      <section className="content">
-        <div className="content__left">
-          <Navigation setContent={ this.setContent }/>
-          <Playlist />
-          <Playing />
-        </div>
-        {mainContent}
-        <div className="content__right">
-          <Social />
-        </div>
-      </section>
+      <Fragment>
+        <Header />
+        <section className="content">
+          <div className="content__left">
+            <Navigation />
+            <Playlist />
+            <Playing />
+          </div>
+          <Switch>
+            <Route exact path ="/" component={ CategoryIndex } />
+            <Route path="/artists" component={ Artists } />
+            <Route path="/albums" component={ Albums } />
+            <Route path="/playlists/:id" component={ PlaylistShow } />
+            <Route path="/search/:q" component={ SearchResult } />
+            <Redirect from="*" to="/" />
+          </Switch>
+        </section>
+        <CurrentTrack />
+      </Fragment>
     );
   }
 }
 
-export default Content;
+export default withRouter(Content);

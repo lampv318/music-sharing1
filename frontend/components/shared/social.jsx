@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 class Social extends React.Component {
   constructor(props) {
@@ -14,7 +15,12 @@ class Social extends React.Component {
             Sam Smith
           </a>
         </div>
-        <button className="button-light">Find Friends</button>
+        <button className="button-light">
+          <FormattedMessage
+            id="social.find_friends"
+            defaultMessage="Find Friends"
+          />
+        </button>
       </div>
     );
   }
