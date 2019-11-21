@@ -11,7 +11,18 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: 'json'} do
     resources :songs, only: [:index, :show]
-    resources :albums, only: [:index, :show]
-    resources :artists, only: [:index, :show]
+    resources :albums, only: [:index, :show] do
+      resources :songs, only: :index
+    end
+    resources :artists, only: [:index, :show] do
+      resources :albums, only: :index
+      resources :songs, only: :index
+    end
+
+    resources :categories, only: [:index, :show] do
+      resources :albums, only: :index
+    end
+
+    resources :playlists, only: [:index, :show]
   end
 end
