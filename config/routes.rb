@@ -18,11 +18,10 @@ Rails.application.routes.draw do
       resources :albums, only: :index
       resources :songs, only: :index
     end
-
     resources :categories, only: [:index, :show] do
       resources :albums, only: :index
     end
-
     resources :playlists, only: [:index, :show]
+    resources :search, only: :index
   end
 end
