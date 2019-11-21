@@ -1,19 +1,20 @@
 class AttachmentsController < ApplicationController
-  before_action :set_attachment, only: :destroy
+  before_action :set_song, only: :show
 
-  def destroy
-    @attachment.purge
-    respond_to do |format|
-      format.html do
-        flash[:danger] = "attachment deleted"
-        redirect_back fallback_location: root_url
+  def show
+    type =
+      case @song.save_file.content_type
+      when "audio/x-flac"
+        "audio/flac"
+      else
+        @song.save_file.content_type
       end
-    end
+
+    send_file @song.save_file.path, disposition: "inline", type: type
   end
 
   private
-  def set_attachment
-    blob = ActiveStorage::Blob.find_signed params[:id]
-    @attachment = ActiveStorage::Attachment.find_by blob_id: blob.id
+  def set_song
+    @song = Song.find_by id: params[:song_id]
   end
 end

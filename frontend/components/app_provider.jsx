@@ -79,7 +79,7 @@ class AppProvider extends React.Component {
     })
 
     let player = document.getElementById('player');
-    player.src = track.file;
+    player.src = track.save_file;
     player.ontimeupdate = () => {
       let percent = (player.currentTime / player.duration) * 100;
       let progressbar =
