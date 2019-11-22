@@ -1,13 +1,13 @@
 <div class="my-form">
 <h4><%= "Log in" %></h4>
 
-<%= form_with  do |f| %>
-  <div class="input-field">
+<%= form_for :session, url: login_path  do |f| %>
+  <div class="">
     <%= f.label :email, "Email" %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="input-field">
+  <div class="">
     <%= f.label :password, "Password" %>
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>

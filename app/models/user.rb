@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :playlists, dependent: :destroy
 
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
+
+  has_secure_password
 end

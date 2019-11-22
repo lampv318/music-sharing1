@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root "pages#index"
   get "player", to: "player#index"
   get "login", to: "sessions#new"
+  post "login", to: "sessions#create"
+  delete "logout", to: "sessions#destroy"
 
   scope "/songs/:song_id", as: "song" do
     resource :attachment, only: [:show, :destroy]

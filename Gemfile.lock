@@ -78,6 +78,7 @@ GEM
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
+    bcrypt (3.1.12)
     best_in_place (3.1.1)
       actionpack (>= 3.2)
       railties (>= 3.2)
@@ -341,6 +342,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  bcrypt
   best_in_place
   bootsnap (>= 1.4.2)
   byebug
