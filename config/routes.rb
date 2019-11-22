@@ -23,5 +23,6 @@ Rails.application.routes.draw do
     end
     resources :playlists, only: [:index, :show]
     resources :search, only: :index
+    resources :users, except: :edit
   end
 end
