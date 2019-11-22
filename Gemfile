@@ -23,6 +23,7 @@ gem "toastr-rails"
 gem "carrierwave"
 gem "ransack"
 gem "config"
+gem "bcrypt"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

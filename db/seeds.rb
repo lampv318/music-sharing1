@@ -1,3 +1,6 @@
+User.create!(name: "lampv", email: "lampvhy@gmail.com", password: "111111", password_confirmation: "111111")
+
+
 metadata_files = Dir.glob("import/*.flac.json")
 metadata_files += Dir.glob("import/*.m4a.json")
 
