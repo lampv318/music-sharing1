@@ -27,5 +27,6 @@ Rails.application.routes.draw do
     resources :search, only: :index
     resources :users, except: :edit
     resources :current_users, only: :index
+    delete :logout, to: "sessions#destroy"
   end
 end

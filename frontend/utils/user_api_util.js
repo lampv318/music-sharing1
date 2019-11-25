@@ -5,3 +5,9 @@ export const fetchCurrentUser = () => (
     response => { return response.data }
   )
 );
+
+export  const  fetchLogoutUser = () => (
+  axios.delete(`/api/logout`).then(
+    response => { return response.data }
+  )
+)
