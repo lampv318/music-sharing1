@@ -25,6 +25,12 @@ class Header extends React.Component {
     )
   }
 
+  handleClick() {
+    UserApiUtil.fetchLogoutUser().then()
+  };
+
+
+
   onSearchSubmit = (e) => {
     e.preventDefault();
     const { searchString } = this.state;
@@ -96,12 +102,7 @@ class Header extends React.Component {
                   </a>
                 </li>
                 <li>
-                  <a href="/logout">
-                    <FormattedMessage
-                      id="header.logout"
-                      defaultMessage="Log Out"
-                    />
-                  </a>
+                  <button onClick={() => { this.handleClick() }} >Log out</button>
                 </li>
               </ul>
             </div>
