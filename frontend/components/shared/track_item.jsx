@@ -104,7 +104,7 @@ class TrackItem extends React.Component {
             {song.artist_name}
           </Link>
         </div>
-        <div className="track__length">{song.duration}</div>
+        <div className="track__length">{song.duration} (s)</div>
       </div>
     )
   }
