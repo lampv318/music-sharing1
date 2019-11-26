@@ -1,10 +1,17 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import { FormattedMessage } from 'react-intl';
+import {
+  Route,
+  Switch,
+} from 'react-router-dom'
 
 import { constants } from '../../constants/constants';
 
 import * as UserApiUtil from '../../utils/user_api_util';
+
+import Logout from './header/logout';
+import Loggin from  './header/loggin';
 
 class Header extends React.Component {
   constructor(props) {
@@ -25,12 +32,6 @@ class Header extends React.Component {
     )
   }
 
-  handleClick() {
-    UserApiUtil.fetchLogoutUser().then()
-  };
-
-
-
   onSearchSubmit = (e) => {
     e.preventDefault();
     const { searchString } = this.state;
@@ -42,7 +43,6 @@ class Header extends React.Component {
   }
 
   render() {
-    const { currentUser } = this.state;
     return (
       <section className="header">
         <div className="search">
@@ -60,53 +60,10 @@ class Header extends React.Component {
           </FormattedMessage>
         </div>
         <div className="user">
-          <div className="user__notifications">
-            <i className="ion-md-notifications" />
-          </div>
-          <div className="user__info">
-            <span className="user__info__name">
-              <span className="name">{currentUser.name}</span>
-            </span>
-          </div>
-          <div className="user__actions">
-            <div className="dropdown">
-              <button
-                className="dropdown-toggle"
-                type="button"
-                id="dropdownMenu1"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="true"
-              >
-                <i className="ion-ios-arrow-down" />
-              </button>
-              <ul
-                className="dropdown-menu dropdown-menu-right"
-                aria-labelledby="dropdownMenu1"
-              >
-                <li>
-                  <a href="/profile">
-                    <FormattedMessage
-                      id="header.profile"
-                      defaultMessage="Profile"
-                    />
-                  </a>
-                </li>
-
-                <li>
-                  <a href="/account">
-                    <FormattedMessage
-                      id="header.payment"
-                      defaultMessage="Payment"
-                    />
-                  </a>
-                </li>
-                <li>
-                  <button onClick={() => { this.handleClick() }} >Log out</button>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <Switch>
+            <Route exact path="/" component={ Loggin } />
+            <Route path="/logout" component={ Logout } />
+          </Switch>
         </div>
       </section>
     );
