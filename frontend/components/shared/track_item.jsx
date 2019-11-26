@@ -62,7 +62,7 @@ class TrackItem extends React.Component {
       track_no = song.index;
     }
 
-    if (song.file) {
+    if (song.save_file) {
       if (song.id === globalContext.currentTrackId) {
         if (globalContext.isPlaying === true) {
           playButton =

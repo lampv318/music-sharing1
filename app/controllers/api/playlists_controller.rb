@@ -20,10 +20,12 @@ module Api
       def set_user
         return if params[:user_id].blank?
         @user = User.find_by id: params[:user_id]
+        present_or_not_found @user
       end
 
       def set_playlist
         @playlist = Playlist.find_by id: params[:id]
+        present_or_not_found @playlist
       end
     end
 end

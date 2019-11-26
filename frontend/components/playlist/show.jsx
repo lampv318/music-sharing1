@@ -122,14 +122,14 @@ class PlaylistShow extends React.Component {
                   </a>
                 </li>
               </ul>
-              <div className="playlist__navigation__friends">
-                <a href="#">
-                  <img
-                    src="http://cdn.devilsworkshop.org/files/2013/01/enlarged-facebook-profile-picture.jpg"
-                    alt="true"
-                  />
-                </a>
-              </div>
+              {/*<div className="playlist__navigation__friends">*/}
+              {/*  <a href="#">*/}
+              {/*    <img*/}
+              {/*      src="http://cdn.devilsworkshop.org/files/2013/01/enlarged-facebook-profile-picture.jpg"*/}
+              {/*      alt="true"*/}
+              {/*    />*/}
+              {/*  </a>*/}
+              {/*</div>*/}
             </div>
           </div>
           <div className="playlist__content">
