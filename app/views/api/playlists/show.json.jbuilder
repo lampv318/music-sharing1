@@ -8,10 +8,10 @@ json.songs @playlist.playlist_songs do |playlist_song|
   json.duration song.duration
   json.artist_id song.artist_id
   json.album_id song.album_id
-  if song.file.present?
-    json.file song_attachment_path song
+  json.artist_name song.artist.name
+  if song.save_file.present?
+    json.save_file song_attachment_path song
   else
-    json.file nil
+    json.save_file nil
   end
 end
-

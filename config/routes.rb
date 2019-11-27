@@ -28,5 +28,8 @@ Rails.application.routes.draw do
     resources :users, except: :edit
     resources :current_users, only: :index
     delete :logout, to: "sessions#destroy"
+    scope "/users/:user_id" do
+      resources :playlists, only: [:index, :show]
+    end
   end
 end
