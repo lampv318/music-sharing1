@@ -1,6 +1,5 @@
 ActiveAdmin.register Song do
-  before_action :validate_file, only: [:create, :update]
-  permit_params :track_no, :name, :artist_id, :album_id, :year, :file,
+  permit_params :track_no, :name, :artist_id, :album_id, :year, :save_file,
                 category_ids: []
 
   config.sort_order = "name_asc"
@@ -8,27 +7,6 @@ ActiveAdmin.register Song do
   controller do
     def scoped_collection
       super.includes :album, :artist, :categories
-    end
-
-    def validate_file
-      file = params[:song][:file]
-      return if file.blank?
-      validate_size file
-      validate_contenttype file
-    end
-
-    def validate_size file
-      return if file.size <= 100000000
-      flash[:danger] = "file large", 100000000
-      redirect_back fallback_location: request.original_url
-      return
-    end
-
-    def validate_contenttype file
-      return if file.content_type.start_with? "audio/"
-      flash[:danger] =  "Wrong Format"
-      redirect_back fallback_location: request.original_url
-      return
     end
   end
 
@@ -45,17 +23,18 @@ ActiveAdmin.register Song do
       best_in_place songs, :name, as: :input, url: [:admin, songs]
     end
     column :album
+    column :album_disc_no do |songs|
+      songs.album.disc_no
+    end
     column :artist
     column :duration
-    column :listen do |song|
-      if song.file.attached?
-        link_to "Listen", song_attachment_url(song) if song.file.present?
-      end
+    column :file do |song|
+      link_to "Listen", song_attachment_url(song) if song.save_file.present?
     end
-    column :download do |song|
-      if song.file.attached?
-        link_to "Download", rails_blob_path(song.file, disposition: "attachment")
-      end
+    column :genres do |song|
+      song.categories.map do |category|
+        raw link_to(category.name, admin_category_path(category))
+      end.join(", ").html_safe
     end
     actions
   end
@@ -65,15 +44,8 @@ ActiveAdmin.register Song do
       row :name
       row :artist
       row :album
-      row :listen do |song|
-        if song.file.attached?
-          link_to "Listen", rails_blob_path(song.file, disposition: "preview")
-        end
-      end
-      row :download do |song|
-        if song.file.attached?
-          link_to "Download", rails_blob_path(song.file, disposition: "attachment")
-        end
+      row :save_file do |song|
+        link_to "Listen", song_attachment_url(song) if song.save_file.present?
       end
       row :genres do
         song.categories.map do |category|

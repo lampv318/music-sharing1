@@ -5,16 +5,23 @@
     <%= f.input :artist %>
     <%= f.input :album %>
     <%= f.input :categories %>
-    <%= f.input :file, as: :file %>
+    <%= f.input :save_file %>
   <% end %>
   <%= f.actions do %>
     <%= f.action :submit %>
     <li class="cancel">
-      <% if f.object.file.attached? %>
-        <%= link_to t("Delete attachment"),
-                    attachment_path(f.object.file.signed_id),
+      <% if action_name == "edit" %>
+        <%= link_to "Cancel", admin_song_path(@song) %>
+      <% else %>
+        <%= link_to "Cancel", admin_songs_path %>
+      <% end %>
+    </li>
+    <li class="cancel">
+      <% if f.object.save_file.present? %>
+        <%= link_to "Delete attachment",
+                    song_attachment_path(f.object),
                     method: :delete,
-                    data: {confirm: "Confirm"} %>
+                    data: {confirm: t("Confirm delete")} %>
       <% end %>
     </li>
   <% end %>
