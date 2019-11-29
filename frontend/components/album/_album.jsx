@@ -59,6 +59,7 @@ class AlbumItem extends React.Component {
 
   render() {
     const { album } = this.state;
+    console.log(album);
     return (
       <div className="media-card" key={album.id}>
         <div
