@@ -118,6 +118,7 @@ ActiveRecord::Schema.define(version: 2019_11_19_063647) do
     t.float "duration"
     t.integer "bit_rate"
     t.string "save_file"
+    t.string "file_in_ws"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
