@@ -24,6 +24,8 @@ gem "carrierwave"
 gem "ransack"
 gem "config"
 gem "bcrypt"
+gem "figaro"
+gem "cloudinary"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

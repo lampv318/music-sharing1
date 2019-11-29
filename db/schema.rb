@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2019_11_19_063647) do
     t.integer "year"
     t.integer "disc_no", default: 1
     t.string "picture"
+    t.string "picture_in_ws"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -74,6 +75,7 @@ ActiveRecord::Schema.define(version: 2019_11_19_063647) do
     t.string "name"
     t.text "info"
     t.string "picture"
+    t.string "picture_in_ws"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -116,6 +118,7 @@ ActiveRecord::Schema.define(version: 2019_11_19_063647) do
     t.float "duration"
     t.integer "bit_rate"
     t.string "save_file"
+    t.string "file_in_ws"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

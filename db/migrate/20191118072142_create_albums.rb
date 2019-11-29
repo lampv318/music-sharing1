@@ -5,7 +5,7 @@ class CreateAlbums < ActiveRecord::Migration[6.0]
       t.integer :year
       t.integer :disc_no, default: 1
       t.string :picture
-
+      t.string :picture_in_ws
       t.timestamps
     end
   end

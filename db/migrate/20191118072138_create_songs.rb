@@ -9,6 +9,7 @@ class CreateSongs < ActiveRecord::Migration[6.0]
       t.float :duration
       t.integer :bit_rate
       t.string :save_file
+      t.string :file_in_ws
 
       t.timestamps
     end

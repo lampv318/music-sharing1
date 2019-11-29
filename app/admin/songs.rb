@@ -5,6 +5,28 @@ ActiveAdmin.register Song do
   config.sort_order = "name_asc"
 
   controller do
+    def create
+      @song = Song.new
+      @song.track_no = params[:song][:track_id]
+      @song.album_id = params[:song][:album_id]
+      @song.artist_id = params[:song][:artist_id]
+      @song.name = params[:song][:name]
+      @song.name = params[:song][:year]
+
+      file_name= "import/" + params[:file]
+      @upload = Cloudinary::Uploader.upload(file_name, :folder => "import/", :overwrite => true, :resource_type => "video")
+
+      if @upload.present?
+        @song.file_in_ws = @upload["url"]
+      end
+      if @song.save
+        flash[:notice] = "Song have been created"
+        render "index"
+      else
+        render "new"
+      end
+    end
+
     def scoped_collection
       super.includes :album, :artist, :categories
     end
@@ -28,6 +50,9 @@ ActiveAdmin.register Song do
     end
     column :artist
     column :duration
+    column :file_in_ws do |song|
+      link_to "Listen",  song.file_in_ws if song.file_in_ws.present?
+    end
     column :file do |song|
       link_to "Listen", song_attachment_url(song) if song.save_file.present?
     end
