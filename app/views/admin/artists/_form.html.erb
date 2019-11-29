@@ -1,0 +1,8 @@
+<%= semantic_form_for [:admin, @artist] do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :name %>
+    <%= f.input :info %>
+    <%= cl_image_upload_tag(:image_id, :resource_type => "img") %>
+  <% end %>
+  <%= f.actions :submit %>
+<% end %>

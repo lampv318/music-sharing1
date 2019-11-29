@@ -16,7 +16,7 @@ ActiveAdmin.register Album do
         @album.picture_in_ws = @upload["url"]
       end
       if @album.save
-        flash[:notice] = "Song have been created"
+        flash[:notice] = "Album have been created"
         render :index
       else
         render :new
