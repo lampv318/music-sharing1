@@ -27,8 +27,8 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 /Gemfile.lock
-/import/*
 /.idea/
+/extract/*
 
 /public/packs
 /public/packs-test

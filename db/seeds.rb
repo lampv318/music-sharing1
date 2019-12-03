@@ -8,6 +8,7 @@ metadata_files.each do |metadata_file|
 
   imported_filename = metadata["format"]["filename"]
   imported_duration = metadata["format"]["duration"]
+  imported_picture = metadata["format"]["picture"]
   # imported_bit_rate = metadata["format"]["bit_rate"]
   imported_tags = metadata["format"]["tags"].transform_keys!(&:downcase)
   imported_title = imported_tags["title"]
@@ -31,17 +32,11 @@ metadata_files.each do |metadata_file|
       end
   album = Album.find_or_create_by name: imported_album, disc_no: imported_disc_no
   album.year = imported_year if album.year.blank?
-  if album.picture.blank?
-    picture_path = imported_filename + ".jpg"
-    album.picture = File.open(picture_path) if File.file? picture_path
-  end
+  album.picture_in_ws = imported_picture  if album.picture.blank?
   album.save!
 
   artist = Artist.find_or_create_by name: imported_artist
-  if artist.picture.blank?
-    picture_path = imported_filename + ".jpg"
-    artist.picture = File.open(picture_path) if File.file? picture_path
-  end
+  artist.picture_in_ws = imported_picture if artist.picture.blank?
   artist.save!
 
   album_artist = Artist.find_or_create_by name: imported_album_artist
@@ -72,7 +67,7 @@ metadata_files.each do |metadata_file|
       category: category
   ) if category.present?
 
-  song.save_file = File.open(imported_filename) if song.save_file.blank?
+  song.file_in_ws = imported_filename if song.save_file.blank?
   song.save!
 
 end
