@@ -1,0 +1,33 @@
+{
+    "format": {
+        "filename": "https://res.cloudinary.com/dtbumlftx/video/upload/v1575354863/import/Tempo_-_Thyse_vv1qxo.mp4",
+        "nb_streams": 2,
+        "nb_programs": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "158.833533",
+        "size": "8093997",
+        "bit_rate": "407671",
+        "probe_score": 100,
+        "picture": "https://res.cloudinary.com/dtbumlftx/image/upload/v1575355186/image/Tempo_-_Thyse.m4a_enounb.jpg",
+        "tags": {
+            "major_brand": "mp42",
+            "minor_version": "0",
+            "compatible_brands": "M4A mp42isomndia",
+            "creation_time": "2019-11-22T05:14:55.000000Z",
+            "track": "1",
+            "genre": "Dance",
+            "album": "Tempo (Single)",
+            "artist": "Thyse",
+            "comment": "www.ChiaSeNhac.com",
+            "composer": "Thyse",
+            "copyright": "DT Game - www.ChiaSeNhac.com",
+            "lyrics": "",
+            "title": "Tempo",
+            "encoder": "Nero AAC codec / 1.3.3.0",
+            "url": "www.ChiaSeNhac.com",
+            "date": "2019"
+        }
+    }
+}
