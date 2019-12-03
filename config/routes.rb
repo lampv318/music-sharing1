@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
-  root "pages#index"
-  get "player", to: "player#index"
+  root "player#index"
+  # get "player", to: "player#index"
   get "login", to: "sessions#new"
   post "login", to: "sessions#create"
   delete "logout", to: "sessions#destroy"

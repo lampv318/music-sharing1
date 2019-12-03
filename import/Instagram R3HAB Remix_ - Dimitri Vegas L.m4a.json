@@ -1,0 +1,32 @@
+{
+    "format": {
+        "filename": "https://res.cloudinary.com/dtbumlftx/video/upload/v1575349526/import/Instagram_R3HAB_Remix__-_Dimitri_Vegas_L_alzu6w.mp4",
+        "nb_streams": 2,
+        "nb_programs": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "151.956933",
+        "size": "7662129",
+        "bit_rate": "403384",
+        "probe_score": 100,
+        "picture": "https://res.cloudinary.com/dtbumlftx/image/upload/v1575350099/image/Instagram_R3HAB_Remix__-_Dimitri_Vegas_L.m4a_b4igeb.jpg",
+        "tags": {
+            "major_brand": "mp42",
+            "minor_version": "0",
+            "compatible_brands": "M4A mp42isomndia",
+            "creation_time": "2019-10-05T05:46:42.000000Z",
+            "track": "1",
+            "genre": "Remix",
+            "album": "Instagram (R3HAB Remix) (Single)",
+            "artist": "Dimitri Vegas &   Like Mike,  David Guetta,  Daddy Yankee ,  Afro Bros,  Natti Natasha",
+            "comment": "www.ChiaSeNhac.com",
+            "copyright": "danjustince - www.ChiaSeNhac.com",
+            "lyrics": "",
+            "title": "Instagram (R3HAB Remix)",
+            "encoder": "Nero AAC codec / 1.3.3.0",
+            "url": "www.ChiaSeNhac.com",
+            "date": "2019"
+        }
+    }
+}
