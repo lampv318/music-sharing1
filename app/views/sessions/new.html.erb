@@ -1,26 +1,26 @@
 <div class="my-form">
-<h4><%= "Log in" %></h4>
+  <h4><%= "Log in" %></h4>
 
-<%= form_for :session, url: login_path  do |f| %>
-  <div class="">
-    <%= f.label :email, "Email" %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="">
-    <%= f.label :password, "Password" %>
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-    <div class="field">
-      <%= f.label :remember_me do %>
-        <%= f.check_box :remember_me %>
-        <span>Remember me</span>
-      <% end %>
+  <%= form_for :session, url: login_path  do |f| %>
+    <div class="">
+      <%= f.label :email, "Email" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
-  <br />
-  <div class="actions">
-    <%= f.submit "Log in", class: "btn waves-effect waves-light" %>
-  </div>
-<% end %>
+
+    <div class="">
+      <%= f.label :password, "Password" %>
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+
+      <div class="field">
+        <%= f.label :remember_me do %>
+          <%= f.check_box :remember_me %>
+          <span>Remember me</span>
+        <% end %>
+      </div>
+    <br />
+    <div class="actions">
+      <%= f.submit "Log in", class: "btn waves-effect waves-light" %>
+    </div>
+  <% end %>
 </div>

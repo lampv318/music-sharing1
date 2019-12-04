@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  ActiveAdmin.routes(self)
+  ActiveAdmin.routes self
+
   root "player#index"
   # get "player", to: "player#index"
   get "login", to: "sessions#new"
@@ -9,7 +10,6 @@ Rails.application.routes.draw do
   scope "/songs/:song_id", as: "song" do
     resource :attachment, only: [:show, :destroy]
   end
-
 
   namespace :api, defaults: {format: 'json'} do
     resources :songs, only: [:index, :show]

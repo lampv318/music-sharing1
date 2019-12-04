@@ -50,7 +50,7 @@ ActiveAdmin.setup do |config|
   #
   # Active Admin will automatically call an authentication
   # method in a before filter of all controller actions to
-  # ensure that there is a currently logged in admin user.
+  # ensure that there is a currently logged in admin users.
   #
   # This setting changes the method which Active Admin calls
   # within the application controller.
@@ -60,7 +60,7 @@ ActiveAdmin.setup do |config|
   #
   # Active Admin will automatically call an authorization
   # method in a before filter of all controller actions to
-  # ensure that there is a user with proper rights. You can use
+  # ensure that there is a users with proper rights. You can use
   # CanCanAdapter or make your own. Please refer to documentation.
   # config.authorization_adapter = ActiveAdmin::CanCanAdapter
 
@@ -79,7 +79,7 @@ ActiveAdmin.setup do |config|
 
   # You can specify a method to be called on unauthorized access.
   # This is necessary in order to prevent a redirect loop which happens
-  # because, by default, user gets redirected to Dashboard. If user
+  # because, by default, users gets redirected to Dashboard. If users
   # doesn't have access to Dashboard, he'll end up in a redirect loop.
   # Method provided here should be defined in application_controller.rb.
   # config.on_unauthorized_access = :access_denied
@@ -87,10 +87,10 @@ ActiveAdmin.setup do |config|
   # == Current User
   #
   # Active Admin will associate actions with the current
-  # user performing them.
+  # users performing them.
   #
   # This setting changes the method which Active Admin calls
-  # (within the application controller) to return the currently logged in user.
+  # (within the application controller) to return the currently logged in users.
   # config.current_user_method = :current_admin_user
 
   # == Logging Out
