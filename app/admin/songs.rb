@@ -8,23 +8,58 @@ ActiveAdmin.register Song do
     def create
       @song = Song.new
       @song.track_no = params[:song][:track_id]
-      @song.album_id = params[:song][:album_id]
-      @song.artist_id = params[:song][:artist_id]
       @song.name = params[:song][:name]
-      @song.name = params[:song][:year]
-
-      file_name= "import/" + params[:file]
-      @upload = Cloudinary::Uploader.upload(file_name, :folder => "import/", :overwrite => true, :resource_type => "video")
-
-      if @upload.present?
-        @song.file_in_ws = @upload["url"]
+      @song.year = params[:song][:year]
+      @song.duration = params[:song][:duration]
+      file_name = "extract/" + params[:file]
+      @upload_song = Cloudinary::Uploader.upload(file_name, :folder => "test/", :resource_type => "video")
+      if @upload_song.present?
+        @song.file_in_ws = @upload_song["url"]
       end
+
+      @album = Album.new
+      @album.name = params[:song][:album][:name]
+
+      @artist = Artist.new
+      @artist.name = params[:song][:artist][:name]
+      @artist.info = params[:song][:artist][:info]
+
+      file_name_album = file_name + ".jpg"
+      @upload_image = Cloudinary::Uploader.upload(file_name_album, :folder => "test/")
+      if @upload_image.present?
+        @album.picture_in_ws = @upload_image["url"]
+        @artist.picture_in_ws = @upload_image["url"]
+      end
+
+      @category = Category.find_or_create_by(name: params[:song][:category][:name])
+      @category.tag = 0 if @category.tag.blank?
+      unless @category.save
+        flash[:notice] = "something went wrong"
+        render "new"
+      end
+
+      unless @artist.save
+        flash[:notice] = "something went wrong"
+        render "new"
+      end
+
+      unless @album.save
+        flash[:notice] = "something went wrong"
+        render "new"
+      end
+
+      @song.artist = @artist
+      @song.album = @album
       if @song.save
-        flash[:notice] = "Song have been created"
+        flash[:notice] = "Create successfully"
         render "index"
       else
         render "new"
       end
+
+      SongCategory.find_or_create_by(song: @song, category: @category)
+      AlbumArtist.find_or_create_by(album: @album, artist: @artist)
+
     end
 
     def scoped_collection
