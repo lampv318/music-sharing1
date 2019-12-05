@@ -2,10 +2,25 @@
   <%= f.inputs do %>
     <%= f.input :track_no %>
     <%= f.input :name %>
-    <%= f.input :artist %>
-    <%= f.input :album %>
-    <%= f.input :categories %>
-    <%=  cl_upload_tag(:video_id, :resource_type => "video", :html => {:id => "my_upload_tag"}) %>
+    <%= f.input :duration %>
+    <%= f.input :year %>
+    <%= f.input :bit_rate %>
+    <%= f.input :file_in_ws %>
+    <%#=  cl_upload_tag(:video_id, :resource_type => "video", :html => {:id => "my_upload_tag"}) %>
   <% end %>
+  <%= f.inputs "Artist", for: Artist.new do |p| %>
+    <%= p.input :name %>
+    <%= p.input :info %>
+    <%= p.input :picture_in_ws %>
+    <%#= cl_image_upload_tag(:image_artist_id, :resource_type => "img", name: "Artist") %>
+  <% end %>
+  <%= f.inputs "Album", for: Album.new do |q| %>
+    <%= q.input :name %>
+    <%= q.input :picture_in_ws %>
+  <% end %>
+  <%= f.inputs "Category", for: Category.new do |k| %>
+    <%= k.input :name %>
+  <% end %>
+
   <%= f.actions :submit %>
 <% end %>

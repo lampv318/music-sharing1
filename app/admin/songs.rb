@@ -8,23 +8,50 @@ ActiveAdmin.register Song do
     def create
       @song = Song.new
       @song.track_no = params[:song][:track_id]
-      @song.album_id = params[:song][:album_id]
-      @song.artist_id = params[:song][:artist_id]
       @song.name = params[:song][:name]
-      @song.name = params[:song][:year]
+      @song.year = params[:song][:year]
+      @song.duration = params[:song][:duration]
+      @song.file_in_ws = params[:song][:file_in_ws]
 
-      file_name= "import/" + params[:file]
-      @upload = Cloudinary::Uploader.upload(file_name, :folder => "import/", :overwrite => true, :resource_type => "video")
+      @album = Album.new
+      @album.name = params[:song][:album][:name]
+      @album.picture_in_ws = params[:song][:album][:picture_in_ws]
 
-      if @upload.present?
-        @song.file_in_ws = @upload["url"]
+      @artist = Artist.new
+      @artist.name = params[:song][:artist][:name]
+      @artist.info = params[:song][:artist][:info]
+      @artist.picture_in_ws = params[:song][:artist][:picture_in_ws]
+
+      @category = Category.find_or_create_by(name: params[:song][:category][:name])
+      @category.tag = 0 if @category.tag.blank?
+      unless @category.save
+        flash[:notice] = "something went wrong"
+        render "new"
       end
+
+      unless @artist.save
+        flash[:notice] = "something went wrong"
+        render "new"
+      end
+
+      unless @album.save
+        flash[:notice] = "something went wrong"
+        render "new"
+      end
+
+      @song.artist = @artist
+      @song.album = @album
       if @song.save
-        flash[:notice] = "Song have been created"
+        flash[:notice] = "Create successfully"
         render "index"
       else
         render "new"
       end
+
+      SongCategory.find_or_create_by(song: @song, category: @category)
+      AlbumArtist.find_or_create_by(album: @album, artist: @artist)
+      AlbumCategory.find_or_create_by(album: @album, category: @category)
+
     end
 
     def scoped_collection
