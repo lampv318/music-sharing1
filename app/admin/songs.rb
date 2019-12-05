@@ -11,7 +11,7 @@ ActiveAdmin.register Song do
       @song.name = params[:song][:name]
       @song.year = params[:song][:year]
       @song.duration = params[:song][:duration]
-      file_name = "extract/" + params[:file]
+      file_name = "/Users/pham.van.lam/Extract/" + params[:file]
       @upload_song = Cloudinary::Uploader.upload(file_name, :folder => "test/", :resource_type => "video")
       if @upload_song.present?
         @song.file_in_ws = @upload_song["url"]
@@ -59,6 +59,7 @@ ActiveAdmin.register Song do
 
       SongCategory.find_or_create_by(song: @song, category: @category)
       AlbumArtist.find_or_create_by(album: @album, artist: @artist)
+      AlbumCategory.find_or_create_by(album: @album, category: @category)
 
     end
 
