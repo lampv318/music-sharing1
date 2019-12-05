@@ -1,0 +1,32 @@
+{
+    "format": {
+        "filename": "https://res.cloudinary.com/dtbumlftx/video/upload/v1575536061/import/Bad_Kind_Of_Butterflies_-_Camila_Cabello_joinzk.mp4",
+        "nb_streams": 2,
+        "nb_programs": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "169.392833",
+        "size": "7803422",
+        "bit_rate": "368536",
+        "probe_score": 100,
+        "picture": "https://res.cloudinary.com/dtbumlftx/image/upload/v1575536327/image/Bad_Kind_Of_Butterflies_-_Camila_Cabello.m4a_tcwqmo.jpg",
+        "tags": {
+            "major_brand": "mp42",
+            "minor_version": "0",
+            "compatible_brands": "M4A mp42isomndia",
+            "creation_time": "2019-11-28T09:07:46.000000Z",
+            "track": "6",
+            "genre": "Pop, rock...",
+            "album": "Romance",
+            "artist": "Camila Cabello",
+            "comment": "www.ChiaSeNhac.com",
+            "copyright": "danjustince - www.ChiaSeNhac.com",
+            "lyrics": "",
+            "title": "Bad Kind Of Butterflies",
+            "encoder": "Nero AAC codec / 1.3.3.0",
+            "url": "www.ChiaSeNhac.com",
+            "date": "2019"
+        }
+    }
+}

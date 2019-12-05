@@ -1,0 +1,33 @@
+{
+    "format": {
+        "filename": "https://res.cloudinary.com/dtbumlftx/video/upload/v1575536879/import/Only_Love_Can_Save_Me_Now_-_Max_Oazo__Ca_xhtce8.mp4",
+        "nb_streams": 2,
+        "nb_programs": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "216.809500",
+        "size": "11064382",
+        "bit_rate": "408261",
+        "probe_score": 100,
+        "picture": "https://res.cloudinary.com/dtbumlftx/image/upload/v1575536365/image/Only_Love_Can_Save_Me_Now_-_Max_Oazo__Ca.m4a_oz4fch.jpg",
+        "tags": {
+            "major_brand": "mp42",
+            "minor_version": "0",
+            "compatible_brands": "M4A mp42isomndia",
+            "creation_time": "2019-12-02T10:41:59.000000Z",
+            "track": "2",
+            "genre": "Dance",
+            "album": "Close To Me",
+            "artist": "Max Oazo, Cami",
+            "comment": "www.ChiaSeNhac.com",
+            "composer": "Max Oazo, Cami",
+            "copyright": "Hoàng - www.ChiaSeNhac.com",
+            "lyrics": "",
+            "title": "Only Love Can Save Me Now",
+            "encoder": "Nero AAC codec / 1.3.3.0",
+            "url": "www.ChiaSeNhac.com",
+            "date": "2019"
+        }
+    }
+}
