@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: foreman start
+    volumes:
+      - .:/music-sharing
+    ports:
+      - "3000:3000"
