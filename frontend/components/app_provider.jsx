@@ -74,7 +74,7 @@ class AppProvider extends React.Component {
 
     this.setState({
       currentTrackName: track.name,
-      currentTrackUrl: track.file,
+      currentTrackUrl: track.save_file,
       currentQueueIndex: index
     })
 

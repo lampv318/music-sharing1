@@ -108,28 +108,7 @@ class PlaylistShow extends React.Component {
                     />
                   </a>
                 </li>
-                <li role="presentation">
-                  <a
-                    href="#related-playlists"
-                    aria-controls="related-playlists"
-                    role="tab"
-                    data-toggle="tab"
-                  >
-                    <FormattedMessage
-                      id="playlist_show.related_playlists"
-                      defaultMessage="Related Albums"
-                    />
-                  </a>
-                </li>
               </ul>
-              {/*<div className="playlist__navigation__friends">*/}
-              {/*  <a href="#">*/}
-              {/*    <img*/}
-              {/*      src="http://cdn.devilsworkshop.org/files/2013/01/enlarged-facebook-profile-picture.jpg"*/}
-              {/*      alt="true"*/}
-              {/*    />*/}
-              {/*  </a>*/}
-              {/*</div>*/}
             </div>
           </div>
           <div className="playlist__content">
@@ -153,32 +132,16 @@ class PlaylistShow extends React.Component {
                               />
                             </div>
                             <div className="tracks__heading__length">
-                              <i className="ion-ios-stopwatch-outline" />
+                              <i className="ion-ios-contact" />
                             </div>
                             <div className="tracks__heading__popularity">
-                              <i className="ion-thumbsup" />
+                              <i className="ion-ios-stopwatch" />
                             </div>
                           </div>
                           {songContent}
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div role="tabpanel" className="tab-pane" id="related-playlists">
-                <div className="media-cards">
-                  <div className="media-card">
-                    <div
-                      className="media-card__image"
-                      style={{
-                        backgroundImage:
-                          'url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/hoodie.jpg)'
-                      }}
-                    >
-                      <i className="ion-ios-play" />
-                    </div>
-                    <a className="media-card__footer">Hoodie Allen</a>
                   </div>
                 </div>
               </div>

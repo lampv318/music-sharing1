@@ -40,7 +40,6 @@ class ArtistAlbum extends React.Component {
         />
       ))
     )
-
     return (
       <div className="album">
         <div className="album__info">
@@ -51,7 +50,7 @@ class ArtistAlbum extends React.Component {
             />
           </div>
           <div className="album__info__meta">
-            <div className="album__year">2015</div>
+            <div className="album__year">{album.year}</div>
             <div className="album__name">
               {album.name}
             </div>
@@ -79,10 +78,10 @@ class ArtistAlbum extends React.Component {
                 />
               </div>
               <div className="tracks__heading__length">
-                <i className="ion-ios-stopwatch-outline" />
+                <i className="ion-ios-contact" />
               </div>
               <div className="tracks__heading__popularity">
-                <i className="ion-thumbsup" />
+                <i className="ion-ios-stopwatch" />
               </div>
             </div>
             {songContent}

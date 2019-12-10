@@ -61,7 +61,7 @@ class PlaylistItem extends React.Component {
 
   render() {
     const { playlist } = this.state;
-
+    // console.log(playlist)
     return (
       <div className="media-card" key={playlist.id}>
         <div

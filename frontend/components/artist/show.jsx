@@ -201,15 +201,6 @@ class ArtistShow extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="artist__listeners">
-              <div className="artist__listeners__count">15,662,810</div>
-              <div className="artist__listeners__label">
-                <FormattedMessage
-                  id="artist_show.monthly_listeners"
-                  defaultMessage="Monthly Listeners"
-                />
-              </div>
-            </div>
             <div className="artist__navigation">
               <ul className="nav nav-tabs" role="tablist">
                 <li role="presentation" className="active">

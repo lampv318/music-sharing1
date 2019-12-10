@@ -1870,13 +1870,14 @@ body {
 
     &__length {
       margin-left: auto;
+      width: 45%;
       font-size: $large;
     }
 
     &__popularity {
       font-size: $large;
-      margin-left: 55px;
-      padding-right: $padding-sm;
+      margin-left: auto;
+      padding-right: auto;
     }
 
   }
