@@ -189,15 +189,6 @@ class ArtistShow extends React.Component {
                       defaultMessage="Play"
                     />
                   </button>
-                  <button className="button-light">
-                    <FormattedMessage
-                      id="artist_show.follow"
-                      defaultMessage="Follow"
-                    />
-                  </button>
-                  <button className="button-light more">
-                    <i className="ion-ios-more" />
-                  </button>
                 </div>
               </div>
             </div>
@@ -213,19 +204,6 @@ class ArtistShow extends React.Component {
                     <FormattedMessage
                       id="artist_show.overview"
                       defaultMessage="Overview"
-                    />
-                  </a>
-                </li>
-                <li role="presentation">
-                  <a
-                    href="#related-artists"
-                    aria-controls="related-artists"
-                    role="tab"
-                    data-toggle="tab"
-                  >
-                    <FormattedMessage
-                      id="artist_show.related_artists"
-                      defaultMessage="Related Artists"
                     />
                   </a>
                 </li>
@@ -245,13 +223,7 @@ class ArtistShow extends React.Component {
                   {albumsContent}
                 </div>
                 <div className="overview__albums">
-
                   {contributedAlbums}
-                </div>
-              </div>
-              <div role="tabpanel" className="tab-pane" id="related-artists">
-                <div className="media-cards">
-                  {relatedArtists}
                 </div>
               </div>
             </div>

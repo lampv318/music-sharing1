@@ -26,6 +26,13 @@ class Playing extends React.Component {
       }
     )(currentQueueType);
 
+    if(globalContext.currentTrackId == 0){
+      return (
+        <section className="playing">
+        </section>
+      )
+    }
+
     return (
       <section className="playing">
         <div className="playing__art">

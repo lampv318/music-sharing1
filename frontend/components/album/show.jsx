@@ -68,15 +68,6 @@ class AlbumShow extends React.Component {
       ))
     )
 
-
-    if (album.related && album.related.length > 0) {
-      relatedAlbums = (
-        album.related.map(item => (
-          <AlbumItem key={item.id} album={item} />
-        ))
-      )
-    }
-
     return (
       <div className="content__middle">
         <div className="album is-verified">
@@ -105,15 +96,6 @@ class AlbumShow extends React.Component {
                       defaultMessage="Play"
                     />
                   </button>
-                  <button className="button-light">
-                    <FormattedMessage
-                      id="album_show.save"
-                      defaultMessage="Save"
-                    />
-                  </button>
-                  <button className="button-light more">
-                    <i className="ion-ios-more" />
-                  </button>
                 </div>
               </div>
             </div>
@@ -129,19 +111,6 @@ class AlbumShow extends React.Component {
                     <FormattedMessage
                       id="album_show.overview"
                       defaultMessage="Overview"
-                    />
-                  </a>
-                </li>
-                <li role="presentation">
-                  <a
-                    href="#related-albums"
-                    aria-controls="related-albums"
-                    role="tab"
-                    data-toggle="tab"
-                  >
-                    <FormattedMessage
-                      id="album_show.related_albums"
-                      defaultMessage="Related Albums"
                     />
                   </a>
                 </li>
@@ -169,10 +138,10 @@ class AlbumShow extends React.Component {
                               />
                             </div>
                             <div className="tracks__heading__length">
-                              <i className="ion-ios-stopwatch-outline" />
+                              <i className="ion-ios-contact" />
                             </div>
                             <div className="tracks__heading__popularity">
-                              <i className="ion-thumbsup" />
+                              <i className="ion-ios-stopwatch" />
                             </div>
                           </div>
                           {songContent}
@@ -180,11 +149,6 @@ class AlbumShow extends React.Component {
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div role="tabpanel" className="tab-pane" id="related-albums">
-                <div className="media-cards">
-                  {relatedAlbums}
                 </div>
               </div>
             </div>

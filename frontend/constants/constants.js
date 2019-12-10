@@ -10,5 +10,6 @@ export const constants = {
   STOP: 'STOP',
   NEXT: 'NEXT',
   PREV: 'PREV',
-  SEARCH: 'SEARCH'
+  SEARCH: 'SEARCH',
+  PLAYLIST: 'PLAYLIST'
 }

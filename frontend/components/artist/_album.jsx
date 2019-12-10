@@ -54,17 +54,6 @@ class ArtistAlbum extends React.Component {
             <div className="album__name">
               {album.name}
             </div>
-            <div className="album__actions">
-              <button className="button-light save">
-                <FormattedMessage
-                  id="artist_album.save"
-                  defaultMessage="Save"
-                />
-              </button>
-              <button className="button-light more">
-                <i className="ion-ios-more" />
-              </button>
-            </div>
           </div>
         </div>
         <div className="album__tracks">

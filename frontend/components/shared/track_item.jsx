@@ -68,26 +68,20 @@ class TrackItem extends React.Component {
           playButton =
             <a href="javascript:void(0)"
               onClick={() => globalContext.dispatch(constants.PAUSE)}>
-              <FormattedMessage
-                id="track_item.pause"
-                defaultMessage="Pause" />
+              <div className="ion-ios-pause" id="track_item.pause"></div>
             </a>
         } else {
           playButton =
             <a href="javascript:void(0)"
               onClick={() => globalContext.dispatch(constants.RESUME)}>
-              <FormattedMessage
-                id="track_item.resume"
-                defaultMessage="Resume" />
+              <div className="ion-ios-play" id="track_item.resume"></div>
             </a>
         }
       } else {
         playButton =
           <a href="javascript:void(0)"
             onClick={() => this.setQueueAndPlay()}>
-            <FormattedMessage
-              id="track_item.play"
-              defaultMessage="Play" />
+            <div className="ion-ios-play" id="track_item.play"></div>
           </a>
       }
     }

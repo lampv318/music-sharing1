@@ -17,3 +17,9 @@ export const fetchSong = (songId) => (
     response => { return response.data }
   )
 );
+
+export const fetchAllSong = () => (
+  axios.get(`/api/songs.json`).then(
+    response => { return response.data }
+  )
+)

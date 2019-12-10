@@ -9,14 +9,14 @@ class NewPlaylist extends React.Component {
   render() {
     return (
       <section className="new_playlist">
-        <a href="#">
-          <i className="ion-ios-add-circle" />
-          <FormattedMessage
-            id="newplaylist.new_playlist"
-            defaultMessage="New Playlist"
-          />
-        </a>
-      </section>
+        {/*<a href="#">*/}
+        {/*  <i className="ion-ios-add-circle" />*/}
+        {/*  <FormattedMessage*/}
+        {/*    id="newplaylist.new_playlist"*/}
+        {/*    defaultMessage="New Playlist"*/}
+        {/*  />*/}
+        {/*</a>*/}
+      // </section>
     );
   }
 }
