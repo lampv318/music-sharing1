@@ -59,12 +59,6 @@ class Header extends React.Component {
             )}
           </FormattedMessage>
         </div>
-        <div className="user">
-          <Switch>
-            <Route exact path="/" component={ Loggin } />
-            <Route path="/logout" component={ Logout } />
-          </Switch>
-        </div>
       </section>
     );
   }

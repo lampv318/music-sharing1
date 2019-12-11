@@ -2,7 +2,6 @@ import React from 'react';
 
 import {constants} from '../constants/constants';
 
-import * as UserApiUtil from '../utils/user_api_util';
 import * as SongApiUtil from '../utils/song_api_util';
 import * as ArtistApiUtil from '../utils/artist_api_util';
 import * as AlbumApiUtil from '../utils/album_api_util';
@@ -108,6 +107,14 @@ class AppProvider extends React.Component {
     }
 
     player.play();
+
+    if (!queue[index + 1]) {
+      SongApiUtil.fetchAllSong().then(
+        data => {
+          this.setState({ currentQueue: data });
+        }
+      )
+    }
 
     this.setState({
       currentTrackId: track.id,

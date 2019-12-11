@@ -87,62 +87,30 @@ class PlaylistShow extends React.Component {
                       defaultMessage="Play"
                     />
                   </button>
-                  <button className="button-light more">
-                    <i className="ion-ios-more" />
-                  </button>
                 </div>
               </div>
             </div>
-            <div className="playlist__navigation">
-              <ul className="nav nav-tabs" role="tablist">
-                <li role="presentation" className="active">
-                  <a
-                    href="#playlist-overview"
-                    aria-controls="playlist-overview"
-                    role="tab"
-                    data-toggle="tab"
-                  >
-                    <FormattedMessage
-                      id="playlist_show.overview"
-                      defaultMessage="Overview"
-                    />
-                  </a>
-                </li>
-              </ul>
-            </div>
           </div>
           <div className="playlist__content">
-            <div className="tab-content">
-              <div
-                role="tabpanel"
-                className="tab-pane active"
-                id="playlist-overview"
-              >
-                <div className="overview">
-                  <div className="overview__playlists">
-                    <div className="playlist">
-                      <div className="playlist__tracks">
-                        <div className="tracks">
-                          <div className="tracks__heading">
-                            <div className="tracks__heading__number">#</div>
-                            <div className="tracks__heading__title">
-                              <FormattedMessage
-                                id="playlist_show.song"
-                                defaultMessage="Song"
-                              />
-                            </div>
-                            <div className="tracks__heading__length">
-                              <i className="ion-ios-contact" />
-                            </div>
-                            <div className="tracks__heading__popularity">
-                              <i className="ion-ios-stopwatch" />
-                            </div>
-                          </div>
-                          {songContent}
-                        </div>
-                      </div>
+            <div className="playlist">
+              <div className="playlist__tracks">
+                <div className="tracks">
+                  <div className="tracks__heading">
+                    <div className="tracks__heading__number">#</div>
+                    <div className="tracks__heading__title">
+                      <FormattedMessage
+                        id="playlist_show.song"
+                        defaultMessage="Song"
+                      />
+                    </div>
+                    <div className="tracks__heading__length">
+                      <i className="ion-ios-contact" />
+                    </div>
+                    <div className="tracks__heading__popularity">
+                      <i className="ion-ios-stopwatch" />
                     </div>
                   </div>
+                  {songContent}
                 </div>
               </div>
             </div>
