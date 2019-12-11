@@ -195,19 +195,13 @@ class ArtistShow extends React.Component {
           </div>
           <div className="artist__content">
             <div className="tab-content">
-              <div
-                role="tabpanel"
-                className="tab-pane active"
-                id="artist-overview"
-              >
-                <div className="overview">
-                  <div className="overview__artist">
-                  </div>
-                  {albumsContent}
+              <div className="overview">
+                <div className="overview__artist">
                 </div>
-                <div className="overview__albums">
-                  {contributedAlbums}
-                </div>
+                {albumsContent}
+              </div>
+              <div className="overview__albums">
+                {contributedAlbums}
               </div>
             </div>
           </div>

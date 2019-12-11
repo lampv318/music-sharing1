@@ -2,12 +2,10 @@ import React from 'react';
 
 import {constants} from '../constants/constants';
 
-import * as UserApiUtil from '../utils/user_api_util';
 import * as SongApiUtil from '../utils/song_api_util';
 import * as ArtistApiUtil from '../utils/artist_api_util';
 import * as AlbumApiUtil from '../utils/album_api_util';
 import * as SearchApiUtil from '../utils/search_api_util';
-import * as PlaylistApiUtil from "../utils/playlist_api_util";
 
 const AppContext = React.createContext();
 
@@ -54,17 +52,6 @@ class AppProvider extends React.Component {
     if (action_type == constants.PREV) {
       this.prevAudio();
     }
-  }
-
-  getSong = () => {
-    SongApiUtil.fetchAllSong().then(
-      data => {
-        this.setState({ songs: data });
-      })
-  }
-
-  componentDidMount() {
-    this.getSong()
   }
 
   startAudio = (queue, index) => {
@@ -120,6 +107,14 @@ class AppProvider extends React.Component {
     }
 
     player.play();
+
+    if (!queue[index + 1]) {
+      SongApiUtil.fetchAllSong().then(
+        data => {
+          this.setState({ currentQueue: data });
+        }
+      )
+    }
 
     this.setState({
       currentTrackId: track.id,

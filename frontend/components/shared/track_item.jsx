@@ -43,18 +43,6 @@ class TrackItem extends React.Component {
     }
   }
 
-  getSong = () => {
-    SongApiUtil.fetchAllSong().then(
-      data => {
-        this.setState({ songs: data });
-      })
-  }
-
-  componentDidMount() {
-    this.getSong()
-  }
-
-
   setQueueAndPlay = () => {
     let globalContext = this.context;
     const { queue, queueType, queueId, queueIndex } = this.state;
