@@ -9,7 +9,7 @@ module Api
           if @album
             @album.songs.all
           else
-            @artist ? @artist.songs : Song.all
+            @artist ? @artist.songs : Song.all.shuffle
           end
 
       respond_to do |format|
