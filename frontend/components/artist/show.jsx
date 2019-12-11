@@ -192,23 +192,6 @@ class ArtistShow extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="artist__navigation">
-              <ul className="nav nav-tabs" role="tablist">
-                <li role="presentation" className="active">
-                  <a
-                    href="#artist-overview"
-                    aria-controls="artist-overview"
-                    role="tab"
-                    data-toggle="tab"
-                  >
-                    <FormattedMessage
-                      id="artist_show.overview"
-                      defaultMessage="Overview"
-                    />
-                  </a>
-                </li>
-              </ul>
-            </div>
           </div>
           <div className="artist__content">
             <div className="tab-content">

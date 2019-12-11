@@ -45,16 +45,16 @@ class PlaylistItem extends React.Component {
       if (isPlaying === true) {
         playButton =
           <i className="ion-ios-pause"
-            onClick={() => { globalContext.dispatch(constants.PAUSE) }} />
+             onClick={() => { globalContext.dispatch(constants.PAUSE) }} />
       } else {
         playButton =
           <i className="ion-ios-play"
-            onClick={() => { globalContext.dispatch(constants.RESUME) }} />
+             onClick={() => { globalContext.dispatch(constants.RESUME) }} />
       }
     } else {
       playButton =
         <i className="ion-ios-play"
-          onClick={() => { this.playArtist(playlist) }} />
+           onClick={() => { this.playArtist(playlist) }} />
     }
     return playButton;
   }

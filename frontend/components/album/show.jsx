@@ -99,55 +99,28 @@ class AlbumShow extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="album__navigation">
-              <ul className="nav nav-tabs" role="tablist">
-                <li role="presentation" className="active">
-                  <a
-                    href="#album-overview"
-                    aria-controls="album-overview"
-                    role="tab"
-                    data-toggle="tab"
-                  >
-                    <FormattedMessage
-                      id="album_show.overview"
-                      defaultMessage="Overview"
-                    />
-                  </a>
-                </li>
-              </ul>
-            </div>
           </div>
           <div className="album__content">
             <div className="tab-content">
-              <div
-                role="tabpanel"
-                className="tab-pane active"
-                id="album-overview"
-              >
-                <div className="overview">
-                  <div className="overview__albums">
-                    <div className="album">
-                      <div className="album__tracks">
-                        <div className="tracks">
-                          <div className="tracks__heading">
-                            <div className="tracks__heading__number">#</div>
-                            <div className="tracks__heading__title">
-                              <FormattedMessage
-                                id="album_show.song"
-                                defaultMessage="Song"
-                              />
-                            </div>
-                            <div className="tracks__heading__length">
-                              <i className="ion-ios-contact" />
-                            </div>
-                            <div className="tracks__heading__popularity">
-                              <i className="ion-ios-stopwatch" />
-                            </div>
-                          </div>
-                          {songContent}
-                        </div>
+              <div className="album">
+                <div className="album__tracks">
+                  <div className="tracks">
+                    <div className="tracks__heading">
+                      <div className="tracks__heading__number">#</div>
+                      <div className="tracks__heading__title">
+                        <FormattedMessage
+                          id="album_show.song"
+                          defaultMessage="Song"
+                        />
+                      </div>
+                      <div className="tracks__heading__length">
+                        <i className="ion-ios-contact" />
+                      </div>
+                      <div className="tracks__heading__popularity">
+                        <i className="ion-ios-stopwatch" />
                       </div>
                     </div>
+                    {songContent}
                   </div>
                 </div>
               </div>

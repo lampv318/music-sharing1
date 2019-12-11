@@ -4,6 +4,7 @@ import { FormattedMessage } from 'react-intl';
 
 import { AppContext } from '../app_provider';
 import { constants } from '../../constants/constants';
+import * as SongApiUtil from "../../utils/song_api_util";
 
 
 class TrackItem extends React.Component {
@@ -41,6 +42,18 @@ class TrackItem extends React.Component {
       $('.collapse').addClass('in');
     }
   }
+
+  getSong = () => {
+    SongApiUtil.fetchAllSong().then(
+      data => {
+        this.setState({ songs: data });
+      })
+  }
+
+  componentDidMount() {
+    this.getSong()
+  }
+
 
   setQueueAndPlay = () => {
     let globalContext = this.context;
