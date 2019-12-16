@@ -29,6 +29,10 @@ gem "foreman"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 4.0.0.beta2'
+  gem 'factory_bot_rails'
+  gem 'database_cleaner'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -49,11 +53,6 @@ end
 
 group :production do
   gem 'pg', '0.20.0'
-end
-
-group :development, :test do
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
