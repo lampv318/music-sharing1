@@ -1,17 +1,16 @@
 require "rails_helper"
 
-RSpec.describe Api::SongsController, type: :controller do
-
+RSpec.describe Api::ArtistsController, type: :controller do
   describe "GET #index" do
-    let!(:songs) { FactoryBot.create_list(:song, 2) }
+    let!(:artists) { FactoryBot.create_list(:artist, 2) }
     before(:each) { get :index, format: "json" }
 
     it "returns a success response" do
       expect(response).to be_successful
     end
 
-    it "assigns @songs" do
-      expect(assigns(:songs).count).to eq(songs.count)
+    it "assigns @artists" do
+      expect(assigns(:artists)).to eq(artists)
     end
 
     it "renders the index template" do
@@ -21,19 +20,18 @@ RSpec.describe Api::SongsController, type: :controller do
     it "response json" do
       expect(response.content_type).to eq "application/json; charset=utf-8"
     end
-
   end
 
   describe "GET #show" do
-    let(:song) { FactoryBot.create(:song)}
-    before(:each) { get :show, params: { id: song.id, format: "json"} }
+    let(:artist) { FactoryBot.create(:artist) }
+    before(:each) { get :show, params: {id: artist.id, format: "json"} }
 
     it "returns a success response" do
       expect(response).to be_successful
     end
 
-    it "assigns @song" do
-      expect(assigns(:song)).to eq(song)
+    it "assigns @artist" do
+      expect(assigns(:artist)).to eq(artist)
     end
 
     it "renders the index template" do
@@ -44,5 +42,4 @@ RSpec.describe Api::SongsController, type: :controller do
       expect(response.content_type).to eq "application/json; charset=utf-8"
     end
   end
-
 end
