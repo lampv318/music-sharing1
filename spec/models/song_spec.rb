@@ -14,15 +14,15 @@ RSpec.describe Song, type: :model do
       it { is_expected.to have_db_column(:save_file).of_type :string }
       it { is_expected.to have_db_column(:file_in_ws).of_type :string }
     end
-  end
 
-  context 'association' do
-    it { is_expected.to belong_to :artist }
-    it { is_expected.to belong_to :album }
-    it { is_expected.to have_many(:playlist_songs).dependent :destroy }
-    it { is_expected.to have_many :playlists }
-    it { is_expected.to have_many(:song_categories).dependent :destroy }
-    it { is_expected.to have_many :categories }
+    describe 'association' do
+      it { is_expected.to belong_to :artist }
+      it { is_expected.to belong_to :album }
+      it { is_expected.to have_many(:playlist_songs).dependent :destroy }
+      it { is_expected.to have_many :playlists }
+      it { is_expected.to have_many(:song_categories).dependent :destroy }
+      it { is_expected.to have_many :categories }
+    end
   end
 
 end
