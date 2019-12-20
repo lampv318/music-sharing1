@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :category do
-    name { "name song test" }
+    name { FFaker::Name.unique.name }
     tag { 0 }
   end
 end

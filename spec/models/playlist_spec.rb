@@ -9,7 +9,7 @@ RSpec.describe Playlist, type: :model do
     end
 
     describe 'association' do
-      it { is_expected.to belong_to :user}
+      it { is_expected.to belong_to :user }
       it { is_expected.to have_many(:playlist_songs).dependent :destroy }
       it { is_expected.to have_many :songs }
     end

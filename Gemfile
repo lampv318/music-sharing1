@@ -26,6 +26,7 @@ gem "bcrypt"
 gem "figaro"
 gem "cloudinary"
 gem "foreman"
+gem "ffaker"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

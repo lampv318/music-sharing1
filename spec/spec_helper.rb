@@ -1,4 +1,5 @@
 require "capybara/rspec"
+require "support/request_helper"
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -8,5 +9,5 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
   config.shared_context_metadata_behavior = :apply_to_host_groups
-
+  config.include Requests::JsonHelpers
 end

@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :album do
-    name { "name album test" }
+    name { "test album name" }
   end
 end
