@@ -1,0 +1,32 @@
+{
+    "format": {
+        "filename": "https://res.cloudinary.com/dtbumlftx/video/upload/v1576635366/upload/Bombay_Dreams_-_KSHMR__Lost_Stories__Kav_vxfa5g.mp4",
+        "nb_streams": 2,
+        "nb_programs": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "198.521033",
+        "size": "10033365",
+        "bit_rate": "404324",
+        "probe_score": 100,
+        "picture": "https://res.cloudinary.com/dtbumlftx/image/upload/v1576635854/upload%20image/Bombay_Dreams_-_KSHMR__Lost_Stories__Kav.m4a_waj1cm.jpg",
+        "tags": {
+            "major_brand": "mp42",
+            "minor_version": "0",
+            "compatible_brands": "M4A mp42isomndia",
+            "creation_time": "2019-09-15T16:45:29.000000Z",
+            "track": "1",
+            "genre": "Electronic",
+            "album": "Bombay Dreams (Single)",
+            "artist": "KSHMR,  Lost Stories,  Kavita Seth",
+            "comment": "www.ChiaSeNhac.com",
+            "copyright": "ikissu102 - www.ChiaSeNhac.com",
+            "lyrics": "I&#039,m dreaming on, I swear\r\nMy wings are clipped, but I don&#039,t care\r\nI&#039,ll carry on with your pictures on my mind\r\nI&#039,ll find a way to make you stay",
+            "title": "Bombay Dreams",
+            "encoder": "Nero AAC codec / 1.3.3.0",
+            "url": "www.ChiaSeNhac.com",
+            "date": "2019"
+        }
+    }
+}

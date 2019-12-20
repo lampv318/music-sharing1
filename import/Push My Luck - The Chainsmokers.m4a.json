@@ -1,0 +1,33 @@
+{
+    "format": {
+        "filename": "https://res.cloudinary.com/dtbumlftx/video/upload/v1575619369/upload/Push_My_Luck_-_The_Chainsmokers_bwvdno.mp4",
+        "nb_streams": 2,
+        "nb_programs": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "181.912833",
+        "size": "8348685",
+        "bit_rate": "367151",
+        "probe_score": 100,
+        "picture": "https://res.cloudinary.com/dtbumlftx/image/upload/v1575619509/upload%20image/Push_My_Luck_-_The_Chainsmokers.m4a_vhffff.jpg",
+        "tags": {
+            "major_brand": "mp42",
+            "minor_version": "0",
+            "compatible_brands": "M4A mp42isomndia",
+            "creation_time": "2019-12-06T06:15:51.000000Z",
+            "track": "1",
+            "genre": "Dance",
+            "album": "Push My Luck (Single)",
+            "artist": "The Chainsmokers",
+            "comment": "www.ChiaSeNhac.com",
+            "composer": "Andrew Taggart, Remy Gautreau, Rick Markowitz",
+            "copyright": "DT Game - www.ChiaSeNhac.com",
+            "lyrics": "",
+            "title": "Push My Luck",
+            "encoder": "Nero AAC codec / 1.3.3.0",
+            "url": "www.ChiaSeNhac.com",
+            "date": "2019"
+        }
+    }
+}

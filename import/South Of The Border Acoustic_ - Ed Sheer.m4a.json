@@ -1,0 +1,32 @@
+{
+    "format": {
+        "filename": "https://res.cloudinary.com/dtbumlftx/video/upload/v1576636154/upload/South_Of_The_Border_Acoustic__-_Ed_Sheer_omezcp.mp4",
+        "nb_streams": 2,
+        "nb_programs": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "194.944300",
+        "size": "9332483",
+        "bit_rate": "382980",
+        "probe_score": 100,
+        "picture": "https://res.cloudinary.com/dtbumlftx/image/upload/v1576636198/upload%20image/South_Of_The_Border_Acoustic__-_Ed_Sheer.m4a_vihwpl.jpg",
+        "tags": {
+            "major_brand": "mp42",
+            "minor_version": "0",
+            "compatible_brands": "M4A mp42isomndia",
+            "creation_time": "2019-11-28T17:31:25.000000Z",
+            "track": "1",
+            "genre": "Pop, rock...",
+            "album": "South Of The Border (Acoustic) (Single)",
+            "artist": "Ed Sheeran,   Camila Cabello",
+            "comment": "www.ChiaSeNhac.com",
+            "copyright": "danjustince - www.ChiaSeNhac.com",
+            "lyrics": "",
+            "title": "South Of The Border (Acoustic)",
+            "encoder": "Nero AAC codec / 1.3.3.0",
+            "url": "www.ChiaSeNhac.com",
+            "date": "2019"
+        }
+    }
+}
