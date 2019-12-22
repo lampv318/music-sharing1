@@ -22,6 +22,10 @@ RSpec.describe Api::SongsController, type: :controller do
       expect(response.content_type).to eq "application/json; charset=utf-8"
     end
 
+    it "should return not found when categories not present" do
+      
+    end
+
   end
 
   describe "GET #show" do
@@ -42,6 +46,14 @@ RSpec.describe Api::SongsController, type: :controller do
 
     it "response json" do
       expect(response.content_type).to eq "application/json; charset=utf-8"
+    end
+  end
+
+  describe "#present_or_not_found" do
+    before { get :show, params: { id: "999", format: "json"} }
+    it "should return status: 404" do 
+      expect(json["status"]).to eq(404)
+      expect(json["error"]).to eq("not found")
     end
   end
 
