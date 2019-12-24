@@ -73,8 +73,8 @@ metadata_files.each do |metadata_file|
 end
 
 Playlist.create!( name: "Greate", user_id: "1")
-5.times do |n|
+(1..10).each { |n|
   PlaylistSong.create(playlist_id: "1", song_id: n, index: n)
-end
+}
 
 
