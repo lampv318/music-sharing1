@@ -1,0 +1,34 @@
+{
+    "format": {
+        "filename": "https://res.cloudinary.com/dtbumlftx/video/upload/v1577259471/upload/This_Is_What_It_Feels_Like_-_Armin_Van_B_h5gtye.mp4",
+        "nb_streams": 2,
+        "nb_programs": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.059500",
+        "duration": "211.649878",
+        "size": "11002741",
+        "bit_rate": "415884",
+        "probe_score": 100,
+        "picture": "https://res.cloudinary.com/dtbumlftx/image/upload/v1577259940/upload%20image/This_Is_What_It_Feels_Like_-_Armin_Van_B.m4a_sc30ri.jpg",
+        "tags": {
+            "major_brand": "mp42",
+            "minor_version": "0",
+            "compatible_brands": "M4A mp42isom",
+            "creation_time": "2013-12-09T11:11:12.000000Z",
+            "track": "6",
+            "genre": "Electronic",
+            "album": "Anthems Trance [Box Set] (Disc 3)",
+            "artist": "Armin Van Buuren, Trevor Guthrie",
+            "comment": "www.ChiaSeNhac.com",
+            "composer": "Armin Van Buuren",
+            "copyright": "nobikool - www.ChiaSeNhac.com",
+            "iTunSMPB": " 00000000 00000A40 000000A4 00000000008E611C 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000",
+            "lyrics": "1. Nobody here knocking at my door\nThe sound of silence I can't take anymore\nNobody ringing my telephone now\nOh how I miss such a beautiful sound.\n\n[Chorus:]\nAnd I don't even know how I survive\nI won't make it to the shore without your light\nNo I don't even know if I'm alive\nOh, oh, oh without you now\nThis is what it feels like.\n\n2. Nothing to hold but the memories and frames\nOh they remind me of the battle I face\nwithout your love, without you I drown\nSomebody save me I'm going down.\n\n[Chorus x2]",
+            "title": "This Is What It Feels Like",
+            "encoder": "Nero AAC codec / 1.5.4.0",
+            "url": "www.ChiaSeNhac.com",
+            "date": "2013"
+        }
+    }
+}

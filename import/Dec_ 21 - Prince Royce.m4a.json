@@ -1,0 +1,32 @@
+{
+    "format": {
+        "filename": "https://res.cloudinary.com/dtbumlftx/video/upload/v1577259477/upload/Dec__21_-_Prince_Royce_pb02os.mp4",
+        "nb_streams": 2,
+        "nb_programs": 0,
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "format_long_name": "QuickTime / MOV",
+        "start_time": "0.000000",
+        "duration": "211.891200",
+        "size": "10483816",
+        "bit_rate": "395818",
+        "probe_score": 100,
+        "picture": "https://res.cloudinary.com/dtbumlftx/image/upload/v1577259933/upload%20image/Dec__21_-_Prince_Royce.m4a_cckua9.jpg",
+        "tags": {
+            "major_brand": "mp42",
+            "minor_version": "0",
+            "compatible_brands": "M4A mp42isomndia",
+            "creation_time": "2019-12-23T16:45:32.000000Z",
+            "track": "1",
+            "genre": "Pop, rock...",
+            "album": "Dec. 21 (Single)",
+            "artist": "Prince Royce",
+            "comment": "www.ChiaSeNhac.com",
+            "copyright": "danjustince - www.ChiaSeNhac.com",
+            "lyrics": "",
+            "title": "Dec. 21",
+            "encoder": "Nero AAC codec / 1.3.3.0",
+            "url": "www.ChiaSeNhac.com",
+            "date": "2019"
+        }
+    }
+}
