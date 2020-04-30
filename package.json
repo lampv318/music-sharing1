@@ -14,7 +14,7 @@
     "bootstrap": "3.3.7",
     "font-awesome": "4.4.0",
     "ionicons": "^4.4.6",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "nouislider": "8.3.0",
     "popper.js": "^1.14.4",
     "prop-types": "^15.7.2",
